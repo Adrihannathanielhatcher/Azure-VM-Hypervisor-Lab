@@ -52,16 +52,35 @@ Open PowerShell (Admin) inside your reconnected Azure VM and run this entire scr
 <img width="653" height="328" alt="image" src="https://github.com/user-attachments/assets/37b8cdb0-0bc3-41a0-90a3-e0098dde2c45" />
 
 
+## Step 4: Provision Your First Inner Guest VM
+
+1. Search for and open Hyper-V Manager from the Windows Start Menu inside your Azure host VM.
+2. Click your host server name on the left panel, then select New > Virtual Machine from the right Actions panel.
+3. Follow the wizard setup:
+	- Generation: Choose Generation 2.
+	- Startup Memory: Assign 2048 MB or 4096 MB and uncheck Use Dynamic Memory.
+	- Configure Networking: Set the connection dropdown to NestedNATSwitch.
+	- Installation Options: Point the virtual DVD drive to a Linux or Windows .iso file downloaded onto your host VM.
+4. Finish the wizard, right-click your new nested guest VM, click Connect, and then click Start.
+
+
+
+<img width="1438" height="716" alt="image" src="https://github.com/user-attachments/assets/f6c5b526-8365-44c3-a501-4dac6cd2e179" />
 
 
 
 
 
+<img width="1016" height="760" alt="image" src="https://github.com/user-attachments/assets/53b2c1c7-a029-4dd6-97da-2ecd7977f8b7" />
 
 
+## Step 5: Verify Your Hypervisor Baseline
 
+- Open Hyper-V Manager from the Windows Start Menu to confirm your host server appears on the left panel.
+- Run Get-NetNat and Get-VMSwitch in PowerShell to confirm NestedNATSwitch and NestedNATNetwork are active.
+- Once you verify the connections, you have completed the project
 
-
+<img width="980" height="509" alt="image" src="https://github.com/user-attachments/assets/2854d041-23b6-429a-bf6e-635ae1b7f33f" />
 
 
 
